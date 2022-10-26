@@ -10,6 +10,8 @@ export const Config: FC = () => {
   const { setConfig, setActiveTab } = useActions();
   const { configReducer } = useTypedSelector((state) => state);
 
+  const [invalidConfig, setInvalidConfig] = useState<string>("");
+
   const [configValue, setConfigValue] = useState<string>(prepareJSON(configReducer));
 
   const handleChange = (e: ChangeEvent<HTMLTextAreaElement>) => {
@@ -17,17 +19,35 @@ export const Config: FC = () => {
   };
 
   const handleFormat = () => {
-    setConfigValue(prepareJSON(JSON.parse(configValue)));
+    try {
+      setConfigValue(prepareJSON(JSON.parse(configValue)));
+      setInvalidConfig("");
+    } catch (err: any) {
+      setInvalidConfig(err.message);
+    }
   };
 
   const handleApply = () => {
-    setConfig(JSON.parse(configValue));
-    setActiveTab(2);
+    try {
+      setConfig(JSON.parse(configValue));
+      setActiveTab(2);
+      setInvalidConfig("");
+    } catch (err: any) {
+      setInvalidConfig(err.message);
+    }
   };
 
   return (
     <div className="config">
-      <textarea value={configValue} onChange={handleChange} className="config__textarea" />
+      <div className="config__inner">
+        <textarea
+          value={configValue}
+          onChange={handleChange}
+          className={invalidConfig ? "config__textarea config__textarea-error" : "config__textarea"}
+        />
+
+        {invalidConfig && <p className="config__textarea-error-text">{invalidConfig}</p>}
+      </div>
 
       <div className="config__button">
         <Button onClick={handleFormat}>Format</Button>

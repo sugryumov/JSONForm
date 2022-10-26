@@ -1,4 +1,4 @@
-export type InputType = "text" | "number" | "textarea" | "checkbox" | "date" | "radio";
+export type InputType = "text" | "password" | "number" | "textarea" | "checkbox" | "date" | "radio";
 
 export interface IRadioOption {
   id: string;
@@ -13,12 +13,12 @@ export interface IFormItem {
   options?: IRadioOption[];
 }
 
-export interface IFormControl {
+export interface IFormButton {
   title: string;
 }
 
 export interface IFormData {
   title: string;
   items: IFormItem[];
-  controls: IFormControl[];
+  buttons: IFormButton[];
 }

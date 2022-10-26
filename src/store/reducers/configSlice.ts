@@ -2,44 +2,50 @@ import { createSlice } from "@reduxjs/toolkit";
 import { IFormData } from "../../interface/IConfig";
 
 const initialState: IFormData = {
-  title: "Test form",
+  title: "Form to JSON",
   items: [
     {
-      name: "name",
-      label: "Name",
+      name: "text",
+      label: "Input text",
       type: "text",
     },
     {
-      name: "age",
-      label: "Age",
+      name: "password",
+      label: "Input password",
+      type: "password",
+    },
+    {
+      name: "number",
+      label: "Input number",
       type: "number",
     },
     {
-      name: "question",
-      label: "Question",
+      name: "textarea",
+      label: "Textarea",
       type: "textarea",
     },
     {
       name: "date",
-      label: "Date",
+      label: "Input date",
       type: "date",
     },
     {
-      name: "agree",
-      label: "Agree",
+      name: "checkbox",
+      label: "Checkbox",
       type: "checkbox",
     },
     {
-      name: "gender",
-      label: "Gender",
+      name: "radio",
+      label: "Radio",
       type: "radio",
       options: [
-        { id: "man", name: "gender", value: "M" },
-        { id: "woman", name: "gender", value: "W" },
+        { id: "one", name: "radio", value: "one" },
+        { id: "two", name: "radio", value: "two" },
+        { id: "three", name: "radio", value: "three" },
       ],
     },
   ],
-  controls: [{ title: "Apply" }, { title: "Ok" }, { title: "Cancel" }],
+  buttons: [{ title: "Apply" }, { title: "Ok" }, { title: "Cancel" }],
 };
 
 const configSlice = createSlice({

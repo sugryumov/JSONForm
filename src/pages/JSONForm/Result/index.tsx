@@ -8,7 +8,7 @@ import { ResultControl } from "./ResultControl";
 import "./index.css";
 
 export const Result: FC = () => {
-  const { title, items, controls } = useTypedSelector((state) => state.configReducer);
+  const { title, items, buttons } = useTypedSelector((state) => state.configReducer);
 
   const [, setFormValues] = useState<{
     [key: string]: string | boolean;
@@ -40,7 +40,7 @@ export const Result: FC = () => {
       </div>
 
       <div className="result-controls">
-        {controls?.map((item) => {
+        {buttons?.map((item) => {
           return <ResultControl item={item} key={item.title} />;
         })}
       </div>

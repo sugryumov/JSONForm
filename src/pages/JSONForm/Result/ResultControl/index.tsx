@@ -1,11 +1,11 @@
 import { FC } from "react";
 import { Button } from "../../../../components/Button";
-import { IFormControl } from "../../../../interface/IConfig";
+import { IFormButton } from "../../../../interface/IConfig";
 
 import "./index.css";
 
 interface ResultControlProps {
-  item: IFormControl;
+  item: IFormButton;
 }
 
 export const ResultControl: FC<ResultControlProps> = ({ item }) => {
