@@ -1,7 +1,8 @@
-import { IFormData } from "../interface/IConfig";
+import { createSlice } from "@reduxjs/toolkit";
+import { IFormData } from "../../interface/IConfig";
 
-export const initialValue: IFormData = {
-  title: "Form",
+const initialState: IFormData = {
+  title: "Test form",
   items: [
     {
       name: "name",
@@ -19,23 +20,14 @@ export const initialValue: IFormData = {
       type: "textarea",
     },
     {
-      name: "gender2",
-      label: "Gender2",
-      type: "radio",
-      options: [
-        { id: "man2", name: "gender2", value: "M" },
-        { id: "woman2", name: "gender2", value: "W" },
-      ],
+      name: "date",
+      label: "Date",
+      type: "date",
     },
     {
       name: "agree",
       label: "Agree",
       type: "checkbox",
-    },
-    {
-      name: "date",
-      label: "Date",
-      type: "date",
     },
     {
       name: "gender",
@@ -47,5 +39,16 @@ export const initialValue: IFormData = {
       ],
     },
   ],
-  constrols: [{ title: "Apply" }, { title: "Ok" }, { title: "Cancel" }],
+  controls: [{ title: "Apply" }, { title: "Ok" }, { title: "Cancel" }],
 };
+
+const configSlice = createSlice({
+  name: "config",
+  initialState,
+  reducers: {
+    setConfig: (_, { payload }) => payload,
+  },
+});
+
+export const configActions = configSlice.actions;
+export default configSlice.reducer;

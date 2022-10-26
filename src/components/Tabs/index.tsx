@@ -8,7 +8,7 @@ type TabsProps = {
   onClick: (index: number) => void;
 };
 
-export const Tabs: FC<TabsProps> = ({ tabs = [], activeTab = 0, onClick }) => {
+export const Tabs: FC<TabsProps> = ({ tabs = [], activeTab = 1, onClick }) => {
   const TabContent = tabs?.find(({ id }) => activeTab === id);
 
   const handleTab = (id: number) => () => onClick(id);

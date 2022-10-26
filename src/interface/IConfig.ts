@@ -20,5 +20,5 @@ export interface IFormControl {
 export interface IFormData {
   title: string;
   items: IFormItem[];
-  constrols: IFormControl[];
+  controls: IFormControl[];
 }
