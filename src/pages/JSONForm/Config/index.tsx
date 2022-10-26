@@ -1,9 +1,11 @@
-import { ChangeEvent, FC, useState } from "react";
+import { FC, useState } from "react";
 import { Button } from "../../../components/Button";
 import { prepareJSON } from "../../../helpers/prepareJSON";
+import { getErrorMessage } from "../../../helpers/getErrorMessage";
 import { useActions } from "../../../hooks/useActions";
 import { useTypedSelector } from "../../../hooks/useTypedSelector";
-import { Intro } from "./Intro";
+import { ConfigTextarea } from "./ConfigTextarea";
+import { ConfigIntro } from "./ConfigIntro";
 
 import "./index.css";
 
@@ -15,16 +17,16 @@ export const Config: FC = () => {
 
   const [configValue, setConfigValue] = useState<string>(prepareJSON(configReducer));
 
-  const handleChange = (e: ChangeEvent<HTMLTextAreaElement>) => {
-    setConfigValue(e.target.value);
+  const handleChange = (value: string) => {
+    setConfigValue(value);
   };
 
   const handleFormat = () => {
     try {
       setConfigValue(prepareJSON(JSON.parse(configValue)));
       setInvalidConfig("");
-    } catch (err: any) {
-      setInvalidConfig(err.message);
+    } catch (err) {
+      setInvalidConfig(getErrorMessage(err));
     }
   };
 
@@ -33,24 +35,20 @@ export const Config: FC = () => {
       setConfig(JSON.parse(configValue));
       setActiveTab(2);
       setInvalidConfig("");
-    } catch (err: any) {
-      setInvalidConfig(err.message);
+    } catch (err) {
+      setInvalidConfig(getErrorMessage(err));
     }
   };
 
   return (
     <div className="config">
-      <Intro />
+      <ConfigIntro />
 
-      <div className="config__inner">
-        <textarea
-          value={configValue}
-          onChange={handleChange}
-          className={invalidConfig ? "config__textarea config__textarea-error" : "config__textarea"}
-        />
-
-        {invalidConfig && <p className="config__textarea-error-text">{invalidConfig}</p>}
-      </div>
+      <ConfigTextarea
+        handleChange={handleChange}
+        configValue={configValue}
+        invalidConfig={invalidConfig}
+      />
 
       <div className="config__button">
         <Button onClick={handleFormat}>Format</Button>

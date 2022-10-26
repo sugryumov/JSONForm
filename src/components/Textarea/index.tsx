@@ -4,18 +4,22 @@ import "./index.css";
 
 interface TextareaProps {
   onChange: (value: string) => void;
+  value?: string;
   label?: string;
   cols?: number;
   rows?: number;
   placeholder?: string;
+  className?: string;
 }
 
 export const Textarea: FC<TextareaProps> = ({
   placeholder,
+  value,
   onChange,
   label,
   cols = 24,
   rows = 10,
+  className,
 }) => {
   const handleChange = (e: ChangeEvent<HTMLTextAreaElement>) => {
     onChange?.(e.target.value);
@@ -30,11 +34,12 @@ export const Textarea: FC<TextareaProps> = ({
       )}
       <textarea
         id={label}
+        value={value}
         cols={cols}
         rows={rows}
         placeholder={placeholder}
         onChange={handleChange}
-        className="input"
+        className={className ? className : "input custom-textarea__input"}
       />
     </div>
   );

@@ -1,8 +1,9 @@
 .custom-textarea {
   display: flex;
   align-items: flex-start;
+  height: 100%;
 }
 
-.custom-textarea textarea {
+.custom-textarea__input {
   width: 350px;
 }
