@@ -11,14 +11,14 @@
   border-top-left-radius: 0.25rem;
   border-top-right-radius: 0.25rem;
   cursor: pointer;
-  background-color: #fff;
+  background-color: var(--color-white);
   transition: border 0.2s ease-in-out 0s;
 }
 
 .tabs__button-active {
   color: var(--color-blue);
   border-width: 1px;
-  border-color: #e9ecef #e9ecef #5468ff;
+  border-color: var(--color-gray) var(--color-gray) var(--color-blue);
 }
 
 .tab__content {
@@ -26,6 +26,6 @@
   height: calc(100vh - 78px);
   padding: 25px;
   box-sizing: border-box;
-  background-color: #f8f8f8;
+  background-color: var(--color-white-secondary);
   box-shadow: 1px 1px 2px rgb(204 204 204 / 75%);
 }
