@@ -19,11 +19,7 @@ export const ResultItem: FC<ResultItemProps> = ({ item, handleChangeForm }) => {
   if (item.type === FIELD_TYPE.RADIO) {
     return (
       <div className="result-items__item">
-        <Radio
-          label={label}
-          options={options!}
-          onChange={handleChangeForm(name)}
-        />
+        <Radio label={label} options={options!} onChange={handleChangeForm(name)} />
       </div>
     );
   }

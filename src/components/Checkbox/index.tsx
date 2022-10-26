@@ -22,12 +22,7 @@ export const Checkbox: FC<CheckboxProps> = ({ label, onChange }) => {
           {label}
         </label>
       )}
-      <input
-        id={label}
-        type="checkbox"
-        checked={checked}
-        onChange={handleChange}
-      />
+      <input id={label} type="checkbox" checked={checked} onChange={handleChange} />
     </div>
   );
 };

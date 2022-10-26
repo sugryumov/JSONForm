@@ -33,13 +33,7 @@ export const Result: FC = () => {
 
       <div className="result-items">
         {initialValue.items.map((item) => {
-          return (
-            <ResultItem
-              item={item}
-              key={item.label}
-              handleChangeForm={handleChangeForm}
-            />
-          );
+          return <ResultItem item={item} key={item.label} handleChangeForm={handleChangeForm} />;
         })}
       </div>
 

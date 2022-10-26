@@ -1,10 +1,4 @@
-export type InputType =
-  | "text"
-  | "number"
-  | "textarea"
-  | "checkbox"
-  | "date"
-  | "radio";
+export type InputType = "text" | "number" | "textarea" | "checkbox" | "date" | "radio";
 
 export interface IRadioOption {
   id: string;

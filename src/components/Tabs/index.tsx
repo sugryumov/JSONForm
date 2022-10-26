@@ -20,20 +20,14 @@ export const Tabs: FC<TabsProps> = ({ tabs = [], activeTab = 0, onClick }) => {
           <button
             key={id}
             onClick={handleTab(id)}
-            className={
-              activeTab === id
-                ? "tabs__button tabs__button-active"
-                : "tabs__button"
-            }
+            className={activeTab === id ? "tabs__button tabs__button-active" : "tabs__button"}
           >
             {label}
           </button>
         ))}
       </div>
 
-      <div className="tab__content">
-        {TabContent && <TabContent.Component id={activeTab} />}
-      </div>
+      <div className="tab__content">{TabContent && <TabContent.Component id={activeTab} />}</div>
     </>
   );
 };

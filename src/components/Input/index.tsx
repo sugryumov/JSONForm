@@ -9,12 +9,7 @@ interface InputProps {
   placeholder?: string;
 }
 
-export const Input: FC<InputProps> = ({
-  type,
-  placeholder,
-  onChange,
-  label,
-}) => {
+export const Input: FC<InputProps> = ({ type, placeholder, onChange, label }) => {
   const handleChange = (e: ChangeEvent<HTMLInputElement>) => {
     onChange?.(e.target.value);
   };

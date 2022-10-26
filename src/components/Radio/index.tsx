@@ -23,13 +23,7 @@ export const Radio: FC<RadioProps> = ({ value, label, options, onChange }) => {
         {options?.map(({ id, value, name }) => {
           return (
             <div key={id} className="custom-radio__item">
-              <input
-                id={id}
-                name={name}
-                type="radio"
-                value={value}
-                onChange={handleChange}
-              />
+              <input id={id} name={name} type="radio" value={value} onChange={handleChange} />
               <label htmlFor={id} className="custom-radio__label">
                 {value}
               </label>
