@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/JSONForm/static/css/main.482e4fbf.css",
+    "main.js": "/JSONForm/static/js/main.5ec142c6.js",
+    "index.html": "/JSONForm/index.html",
+    "main.482e4fbf.css.map": "/JSONForm/static/css/main.482e4fbf.css.map",
+    "main.5ec142c6.js.map": "/JSONForm/static/js/main.5ec142c6.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.482e4fbf.css",
+    "static/js/main.5ec142c6.js"
+  ]
+}
