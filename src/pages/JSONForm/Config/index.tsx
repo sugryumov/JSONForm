@@ -3,6 +3,7 @@ import { Button } from "../../../components/Button";
 import { prepareJSON } from "../../../helpers/prepareJSON";
 import { useActions } from "../../../hooks/useActions";
 import { useTypedSelector } from "../../../hooks/useTypedSelector";
+import { Intro } from "./Intro";
 
 import "./index.css";
 
@@ -39,6 +40,8 @@ export const Config: FC = () => {
 
   return (
     <div className="config">
+      <Intro />
+
       <div className="config__inner">
         <textarea
           value={configValue}

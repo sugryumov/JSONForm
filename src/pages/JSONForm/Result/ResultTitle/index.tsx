@@ -7,5 +7,5 @@ interface ResultTitleProps {
 }
 
 export const ResultTitle: FC<ResultTitleProps> = ({ title }) => {
-  return <h1 className="result-title">{title}</h1>;
+  return <h2 className="result-title">{title}</h2>;
 };

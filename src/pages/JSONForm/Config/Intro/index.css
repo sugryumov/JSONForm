@@ -1,0 +1,7 @@
+.intro {
+  margin-bottom: 15px;
+}
+
+.intro__summary {
+  cursor: pointer;
+}
