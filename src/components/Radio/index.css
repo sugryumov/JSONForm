@@ -1,0 +1,12 @@
+.custom-radio {
+  display: flex;
+  align-items: flex-start;
+}
+
+.custom-radio__item:not(:last-child) {
+  margin-bottom: 5px;
+}
+
+.custom-radio__label {
+  margin-left: 10px;
+}

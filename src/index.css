@@ -1,0 +1,25 @@
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
+    sans-serif;
+}
+
+:root {
+  --color-blue: #1890ff;
+  --color-blue-hover: #40a9ff;
+  --color-white: #fff;
+}
+
+.input {
+  padding: 4px 11px;
+  font-size: 14px;
+  line-height: 1.5;
+  border: 1px solid #d9d9d9;
+  border-radius: 2px;
+}
+
+.label {
+  flex-basis: 15%;
+  padding-right: 15px;
+}

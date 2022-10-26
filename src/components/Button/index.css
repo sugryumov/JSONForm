@@ -1,0 +1,12 @@
+.button {
+  border: none;
+  display: inline-block;
+  cursor: pointer;
+  padding: 10px 30px;
+  color: var(--color-white);
+  background-color: var(--color-blue);
+}
+
+.button:hover {
+  background-color: var(--color-blue-hover);
+}
