@@ -3,7 +3,8 @@
   align-items: center;
 }
 
-.custom-input input[type="text"] {
+.custom-input input[type="text"],
+.custom-input input[type="password"] {
   width: 350px;
 }
 

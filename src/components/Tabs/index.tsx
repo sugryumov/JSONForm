@@ -1,5 +1,6 @@
 import { FC } from "react";
 import { ITabs } from "../../interface/ITabs";
+
 import "./index.css";
 
 type TabsProps = {

@@ -1,6 +1,6 @@
 import { createSlice } from "@reduxjs/toolkit";
 
-const initialState: any = {
+const initialState: { activeTab: number } = {
   activeTab: 1,
 };
 
